@@ -71,3 +71,49 @@ void insertNode(int n) {
 	}
 }
 
+void deleteNode(int n) {
+	node *ptr = searchNode(n);
+	if(ptr == NULL) 
+		cout << "No node with data = " << n << endl;
+	if(ptr == head) {
+		head = ptr->next;
+		return;
+	}
+	node *cur = head;
+	node *prev = head;
+
+	while(cur) {
+		if(cur == ptr) {
+			prev->next = cur->next;
+			return;
+		}
+		prev = cur;
+		cur = cur->next;
+	}
+}
+
+void display() {
+	struct node *list = head;
+	while(list) {
+		cout << list->data <<" ";
+		list = list->next;
+	}
+	cout << endl;
+}
+
+int main()
+{
+	addNode(10);
+        display();
+	addNode(20);
+	display();
+	addNode(40);
+	display();
+	addNode(50);
+	display();
+	insertNode(30);
+	display();
+	deleteNode(40);
+	display();
+	return 0;
+}
