@@ -104,13 +104,17 @@ void display() {
 int main()
 {
 	addNode(10);
-        display();
+  display();
 	addNode(20);
 	display();
 	addNode(40);
 	display();
 	addNode(50);
 	display();
+  addNode(60);
+  display();
+  addNode(5);
+  display();
 	insertNode(30);
 	display();
 	deleteNode(40);
